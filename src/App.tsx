@@ -1,45 +1,23 @@
 import React from "react";
+import Navbar from "./Navbar";
+
+import { Route, Router, BrowserRouter, Routes } from "react-router-dom";
+import AboutMe from "./AboutMe";
+import Skills from "./Skills";
+import Projects from "./Projects";
 
 function App() {
   return (
-    <div className="bg-cyan-950 text-gray-50 min-h-screen flex items-center justify-center">
-      <div className="bg-cyan-900 p-8 rounded shadow-lg text-center">
-        <h1 className="text-5xl font-extrabold mb-4">Lennart Pries</h1>
-        <p className="text-gray-300 text-lg mb-8">Software Developer</p>
-        <ul className="flex justify-center space-x-4">
-          <li>
-            <a
-              href="https://github.com/lennart02"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-500 text-white px-4 py-2 rounded-full transition duration-300 hover:bg-blue-700"
-            >
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/lennart-pries-84bb8a238/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-500 text-white px-4 py-2 rounded-full transition duration-300 hover:bg-blue-700"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:lennartichbin@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-500 text-white px-4 py-2 rounded-full transition duration-300 hover:bg-blue-700"
-            >
-              Email
-            </a>
-          </li>
-        </ul>
+    <BrowserRouter>
+      <div className="h-screen">
+        <Navbar />
+        <Routes>
+          <Route path="/projects" element={<Projects/>} />
+          <Route path="/skills" element={<Skills/>} />
+          <Route path="/" element={<AboutMe />} />
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
