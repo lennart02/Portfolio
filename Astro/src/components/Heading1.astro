@@ -1,0 +1,9 @@
+---
+const { text } = Astro.props;
+---
+
+<p class="relative group mb-8 w-min">
+  <span class="text-5xl font-bold">{text}</span>
+  <span class="absolute -bottom-1 left-1/2 w-0 h-2 bg-accent group-hover:w-1/2 group-hover:transition-all"></span>
+  <span class="absolute -bottom-1 right-1/2 w-0 h-2 bg-accent group-hover:w-1/2 group-hover:transition-all"></span>
+</p>
